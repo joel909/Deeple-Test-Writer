@@ -41,6 +41,62 @@ time.sleep(2)
 element = driver.find_element(By.XPATH, "//*[contains(text(), 'Physical Chemistry (2)')]")
 element.click()
 
+time.sleep(2)
+element = driver.find_element(By.XPATH, "//*[contains(text(), 'Atomic Structure')]")
+element.click()
+
+time.sleep(2)
+element = driver.find_element(By.XPATH, "//*[contains(text(), 'CCT 04')]")
+element.click()
+
+time.sleep(2)
+element = driver.find_element(By.XPATH, "//*[contains(text(), 'View Results')]")
+element.click()
+
+#this is to get the question div where the div is 
+time.sleep(2)
+one_div  = driver.find_element(By.CLASS_NAME, "ng-star-inserted")
+two  = one_div.find_element(By.CLASS_NAME, "ng-star-inserted")
+print(two.get_attribute("innerHTML"))
+
+#performing recursive search to get the question text
+three = driver.find_element(By.ID, "xyz")
+four = three.find_element(By.TAG_NAME, "div")
+four = four.find_element(By.TAG_NAME, "div")
+five = four.find_element(By.TAG_NAME, "quill-view-html")
+six = five.find_element(By.TAG_NAME, "div")
+seven = six.find_element(By.TAG_NAME, "div")
+eight = seven.find_element(By.TAG_NAME, "p")
+
+final_question_text = eight.get_attribute("innerHTML")
+
+print(eight.get_attribute("innerHTML"))
+
+
+third = three.find_element(By.TAG_NAME, "div")
+#fourth = third.find_element(By.TAG_NAME, "div")
+
+
+
+
+# Question_div = driver.find_element(By.CLASS_NAME, "ng-star-inserted")
+# div_element = Question_div.find_element(By.TAG_NAME, "div")
+# question_text = div_element.find_element(By.TAG_NAME, "div")
+# try:
+#     print("in try")
+#     e = question_text.get_attribute("class")
+#     print(e)
+#     print("reached till here")
+#     next = question_text.find_element(By.TAG_NAME, "div")
+#     print("try ran")
+
+# except:
+#     print("in eceprt")
+#     print(next)
+
+# hello = question_text.find_element(By.TAG_NAME, "p")
+
+
 
 
 
